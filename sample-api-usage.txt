@@ -6,7 +6,7 @@ Just a sample of using the api
 Java code to access max temperature for New York
 You will need to download json-20180813.jar to parse the JSON
 Get an API key and replace the variable yourKey with it to make it work
-
+The API returns the temperature in Kelvin which is why there is a formula converting it
 
 
 
@@ -51,7 +51,7 @@ public class WeatherTest {
         JSONObject obj = readJsonFromUrl("http://api.openweathermap.org/data/2.5/weather?q=new york&APPID="+yourKey);
         double temp_max = obj.getJSONObject("main").getDouble("temp_max");
         
-        temp_max = temp_max *9/5 - 459.67;
+        temp_max = (temp_max-273.15) *9/5 +32;
         
         System.out.println(temp_max);
         
