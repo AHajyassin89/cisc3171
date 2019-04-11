@@ -22,7 +22,7 @@ public class WeatherApp {
         //System.out.println(cw.toString());
        ForecastWeather fwList= new ForecastWeather("http://api.openweathermap.org/data/2.5/forecast?q=new%20york,us&APPID="+apiKey);
 
-        for(int i = 0; i< 38 ;i++){
+        for(int i = 0; i< (fwList.forecastList.length) ;i++){
             System.out.println(fwList.forecastList[i].toString());
         }
 
