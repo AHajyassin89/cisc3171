@@ -6,6 +6,8 @@ public class ForecastWeather {
 public Weather[] forecastList;
 private double[] highs;
 private double[] lows;
+private double[] humidity;
+private double[] wind;
 //array to store weather objects
 
     public ForecastWeather() {
@@ -29,17 +31,16 @@ private double[] lows;
             this.forecastList[i].setHumidity(list.getJSONObject("main").getDouble("humidity"));
             this.forecastList[i].setMaxTemp(list.getJSONObject("main").getDouble("temp_max"));
             this.forecastList[i].setMinTemp(list.getJSONObject("main").getDouble("temp_min"));
-
-
-
-	    // removed the math because you can add "&units=imperia" at the end of the url
-            //"http://api.openweathermap.org/data/2.5/forecast?q=new york&appid=2f872b5246cef2d7a2bfcf6e10a62160&lang=eng&units=imperial"
+            this.forecastList[i].setWind(list.getJSONObject("wind").getDouble("speed"));
             
             
 
         }
         highs = new double[5];
-            lows = new double [5];
+        lows = new double [5];
+        humidity = new double[5];
+        wind = new double [5];
+        double windAvg = 0, humidityAvg=0;
      
             for (int i=0, j=1;i<(forecastList.length-1);i++)
             {
@@ -59,13 +60,53 @@ private double[] lows;
                     {
                         highs[j-1] = forecastList[i+1].getMaxTemp();
                     }
+                    
+                   humidityAvg += forecastList[i].getHumidity();
+                    windAvg += forecastList[i].getWind();
                     i++;
                 }
+                humidity[j-1] = humidityAvg/i;
+                humidityAvg = 0;
+                wind[j-1] = windAvg/i;
+                windAvg = 0;
                 j++;
                 }
             }
     }
     
-
+    public double getDailyHigh(int day)
+    {
+        if (day>5 || day <1)
+        {
+            throw new ArrayIndexOutOfBoundsException("5 days only: range 1-5");
+        }
+        return highs[day-1];
+    }
+    public double getDailyLow(int day)
+    {
+        if (day>5 || day <1)
+        {
+            throw new ArrayIndexOutOfBoundsException("5 days only: range 1-5");
+        }
+        return lows[day-1];
+    }
+    public double getDailyHumidity(int day)
+    {
+        if (day>5 || day <1)
+        {
+            throw new ArrayIndexOutOfBoundsException("5 days only: range 1-5");
+        }
+        return humidity[day-1];
+    }
+    public double getDailyWind(int day)
+    {
+        if (day>5 || day <1)
+        {
+            throw new ArrayIndexOutOfBoundsException("5 days only: range 1-5");
+        }
+        return wind[day-1];
+    }
     
+
+
 }
