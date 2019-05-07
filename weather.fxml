@@ -26,8 +26,9 @@
                   <Font name="System Bold" size="15.0" />
                </font></JFXTextField>
             <JFXButton fx:id="change" layoutX="481.0" layoutY="55.0" onAction="#handleButtonClicks" style="-fx-background-color: #ff6767; -fx-background-radius: 10px;" text="Change" />
-            <JFXButton fx:id="set" layoutX="406.0" layoutY="55.0" onAction="#handleButtonClicks" style="-fx-background-radius: 10px; -fx-background-color: #ff6767;" text="Cancel" />
-            <JFXButton fx:id="cancel" layoutX="575.0" layoutY="55.0" onAction="#handleButtonClicks" style="-fx-background-radius: 10px; -fx-background-color: #ff6767;" text="Set" />
+            <JFXButton fx:id="cancel" layoutX="406.0" layoutY="55.0" onAction="#handleButtonClicks" style="-fx-background-radius: 10px; -fx-background-color: #ff6767;" text="Cancel" />
+            <JFXButton fx:id="set" layoutX="575.0" layoutY="55.0" onAction="#handleButtonClicks" style="-fx-background-radius: 10px; -fx-background-color: #ff6767;" text="Set" />
+            <JFXButton fx:id="fiveday" layoutX="650.0" layoutY="55.0" onAction="#handleButtonClicks" style="-fx-background-radius: 10px; -fx-background-color: #ff6767;" text="5 Day" />
          </children>
       </Pane>
       <Pane fx:id="pane1" layoutX="5.0" layoutY="7.0" prefHeight="554.0" prefWidth="1041.0">
