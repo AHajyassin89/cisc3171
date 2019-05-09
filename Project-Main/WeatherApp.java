@@ -19,8 +19,12 @@ public class WeatherApp {
         
         CurrentWeather cw = new CurrentWeather("http://api.openweathermap.org/data/2.5/weather?q=new york&APPID="+apiKey);
         CurrentWeather cw2 = new CurrentWeather("http://api.openweathermap.org/data/2.5/weather?q=chicago&APPID="+apiKey);
-        System.out.println(cw.toString());
-       // CurrentWeather fw = new CurrentWeather("http://api.openweathermap.org/data/2.5/forecast?q=new%20york,us&APPID="+apiKey);
+        //System.out.println(cw.toString());
+       ForecastWeather fwList= new ForecastWeather("http://api.openweathermap.org/data/2.5/forecast?q=new%20york,us&APPID="+apiKey);
+
+        for(int i = 0; i< (fwList.forecastList.length) ;i++){
+            System.out.println(fwList.forecastList[i].toString());
+        }
 
 
 

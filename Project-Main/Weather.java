@@ -1,57 +1,64 @@
-package com.codebeasty.json.json;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
+
+
 
 public class Weather {
-    private String icon;
+    private String cloudDescription;
+    private double temp;
+    private double humidity;
+    private double maxTemp;
+    private double minTemp;
+    private Date date;
+    
+    private final SimpleDateFormat sdf;
+    
+    
 
-    private String description;
-
-    private String main;
-
-    private String id;
-
-    public String getIcon ()
-    {
-        return icon;
+    Weather(){
+        sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+        
     }
+//weather object class to hold the information from json
 
-    public void setIcon (String icon)
-    {
-        this.icon = icon;
-    }
+    
+    
+    public void setCloudDescription(String cloudDescription){this.cloudDescription = cloudDescription;}
+    public String getCloudDescription() { return this.cloudDescription; }
 
-    public String getDescription ()
-    {
-        return description;
-    }
+    public void setTemp(double temp){this.temp= temp;}
+    public double getTemp() { return this.temp; }
 
-    public void setDescription (String description)
-    {
-        this.description = description;
-    }
+    public void setMaxTemp(double maxTemp){this.maxTemp=maxTemp;}
+    public double getMaxTemp() { return this.maxTemp;  }
 
-    public String getMain ()
-    {
-        return main;
-    }
+    public void setMinTemp(double minTemp){this.minTemp = minTemp;}
+    public double getMinTemp() { return this.minTemp; }
 
-    public void setMain (String main)
-    {
-        this.main = main;
-    }
+    public void setHumidity(double humidity){this.humidity= humidity;}
+    public double getHumidity() {  return this.humidity; }
 
-    public String getId ()
-    {
-        return id;
-    }
-
-    public void setId (String id)
-    {
-        this.id = id;
-    }
-
+    public void setDate(String date) throws ParseException{this.date = sdf.parse(date);}
+    public String getDate() {  return this.date.toString(); }
+    public Date getDateAsDate() {  return this.date; }
+    
+    public Date getDateWithoutTime() throws ParseException 
+        { 
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+            return formatter.parse(formatter.format(this.date)); 
+        }
+    
+    
     @Override
-    public String toString()
-    {
-        return "ClassPojo [icon = "+icon+", description = "+description+", main = "+main+", id = "+id+"]";
+    public String toString() {
+        return ("Date: " + date + "\nTemperature: " + temp + "\nMaximum Temperature: " + maxTemp + "\nMinimum"
+                + " Temperature: " + minTemp + "\nHumidity: " + humidity + "\n" + cloudDescription);
     }
+    
+    
+
+    
 }
