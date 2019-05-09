@@ -12,7 +12,9 @@ public class Weather {
     private double humidity;
     private double maxTemp;
     private double minTemp;
+    private double wind;
     private Date date;
+    private String icon;
     
     private final SimpleDateFormat sdf;
     
@@ -51,7 +53,13 @@ public class Weather {
             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             return formatter.parse(formatter.format(this.date)); 
         }
+    
+    public void setWind(double wind){this.wind=wind;}
+    public double getWind() { return this.wind;  }
 
+    public void setIcon(String icon){this.icon=icon;}
+    public String getIcon() { return this.icon;  }
+    
     
     @Override
     public String toString() {

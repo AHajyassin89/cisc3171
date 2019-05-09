@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anuragroy.Controllers.ForecastController">
+   <children>
+      <ImageView fitHeight="670.0" fitWidth="1050.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/bg.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="5.0" layoutY="561.0" prefHeight="106.0" prefWidth="1041.0">
+         <children>
+            <JFXButton fx:id="back" layoutX="480.0" layoutY="28.0" onAction="#back" prefHeight="31.0" prefWidth="80.0" style="-fx-background-radius: 10px; -fx-background-color: #ff6767;" text="Back" />
+         </children>
+      </Pane>
+      <Pane fx:id="pane1" layoutX="5.0" layoutY="7.0" prefHeight="554.0" prefWidth="1041.0">
+         <children>
+            <Label fx:id="city" alignment="CENTER" layoutX="254.0" layoutY="14.0" prefHeight="58.0" prefWidth="533.0" text="CITY NAME" textFill="#78ffc4">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="129.0" prefHeight="40.0" prefWidth="183.0" text="CURRENT WEATHER" textAlignment="CENTER" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="96.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="High:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="171.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="Low:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="errors" alignment="CENTER" layoutX="329.0" layoutY="72.0" prefHeight="40.0" prefWidth="383.0" text="Errors" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="currentTemp" alignment="CENTER" layoutX="98.0" layoutY="331.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="601.0" layoutY="129.0" prefHeight="40.0" prefWidth="183.0" text="Day 4" textAlignment="CENTER" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="429.0" layoutY="129.0" prefHeight="40.0" prefWidth="183.0" text="Day 3" textAlignment="CENTER" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="264.0" layoutY="129.0" prefHeight="40.0" prefWidth="183.0" text="Day 2" textAlignment="CENTER" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="787.0" layoutY="129.0" prefHeight="40.0" prefWidth="183.0" text="Day 5" textAlignment="CENTER" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="img1" fitHeight="106.0" fitWidth="123.0" layoutX="85.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="img2" fitHeight="106.0" fitWidth="123.0" layoutX="294.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="img3" fitHeight="106.0" fitWidth="123.0" layoutX="459.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="img4" fitHeight="106.0" fitWidth="123.0" layoutX="631.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="img5" fitHeight="106.0" fitWidth="123.0" layoutX="824.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="high1" alignment="CENTER" layoutX="64.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="low1" alignment="CENTER" layoutX="139.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="282.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="High:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="357.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="Low:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="high2" alignment="CENTER" layoutX="250.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="low2" alignment="CENTER" layoutX="325.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="447.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="High:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="522.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="Low:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="high3" alignment="CENTER" layoutX="415.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="low3" alignment="CENTER" layoutX="490.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="619.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="High:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="694.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="Low:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="high4" alignment="CENTER" layoutX="587.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="low4" alignment="CENTER" layoutX="662.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="805.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="High:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="880.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="Low:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="high5" alignment="CENTER" layoutX="773.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="low5" alignment="CENTER" layoutX="848.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children></Pane>
+   </children>
+</AnchorPane>

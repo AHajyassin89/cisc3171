@@ -4,6 +4,7 @@ import com.anuragroy.Models.ImageHandler;
 import com.anuragroy.Models.WeatherManager;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import java.io.IOException;
 import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
@@ -17,6 +18,13 @@ import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class Controller implements Initializable {
     WeatherManager weatherManager;
@@ -25,12 +33,19 @@ public class Controller implements Initializable {
     @FXML
     private ImageView img;
     @FXML
-    private JFXButton change, set, cancel;
+    private JFXButton change, set, cancel, fiveDayForecast;
     @FXML
     private JFXTextField cityName, invis;
     @FXML
     private Label city, temperature, day, desc, errors, windSpeed, cloudiness, pressure, humidity;
 
+    @FXML
+    private ImageView img1, img2, img3, img4, img5;
+    @FXML
+    private JFXButton back;
+    @FXML
+    private Label currentTemp, high1, high2, high3, high4, high5, low1, low2, low3, low4, low5;
+    
     //Constructor to set the initial city to Pune
     public Controller() {
         this.citySet = "New York".toUpperCase();
@@ -141,12 +156,35 @@ public class Controller implements Initializable {
         humidity.setText(weatherManager.getHumidity()+"%");
     }
 
+    
+    @FXML
+    private void loadFiveDay(ActionEvent event) throws IOException
+    {
+        Parent blah = FXMLLoader.load(getClass().getResource("/fxml/5DayForecast.fxml"));
+        Scene scene = new Scene(blah);
+        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage.setScene(scene);
+        appStage.show();
+    }
+    /*
+    @FXML
+    private AnchorPane rootPane;
+    @FXML
+    private void loadFiveDay(ActionEvent event) throws IOException
+    {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/fxml/5DayForecast.fxml"));
+        rootPane.getChildren().setAll(pane);
+    }
+    */
+    
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         cityName.setText(citySet);
         cityName.setDisable(false);
         set.setVisible(false);
         cancel.setVisible(false);
+        fiveDayForecast.setVisible(true);
         errors.setText("");
         weatherManager = new WeatherManager(citySet);
         invis.requestFocus();
@@ -170,4 +208,7 @@ public class Controller implements Initializable {
             }
         });
     }
+    
+
+
 }
