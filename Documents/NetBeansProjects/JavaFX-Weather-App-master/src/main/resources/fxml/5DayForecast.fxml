@@ -17,152 +17,242 @@
       </ImageView>
       <Pane layoutX="5.0" layoutY="561.0" prefHeight="106.0" prefWidth="1041.0">
          <children>
-            <JFXButton fx:id="back" layoutX="480.0" layoutY="28.0" onAction="#back" prefHeight="31.0" prefWidth="80.0" style="-fx-background-radius: 10px; -fx-background-color: #ff6767;" text="Back" />
+            <JFXButton fx:id="back" layoutX="481.0" layoutY="22.0" onAction="#back" prefHeight="31.0" prefWidth="80.0" style="-fx-background-radius: 10px; -fx-background-color: #ff6767;" text="Back" />
          </children>
       </Pane>
       <Pane fx:id="pane1" layoutX="5.0" layoutY="7.0" prefHeight="554.0" prefWidth="1041.0">
          <children>
-            <Label fx:id="city" alignment="CENTER" layoutX="254.0" layoutY="14.0" prefHeight="58.0" prefWidth="533.0" text="CITY NAME" textFill="#78ffc4">
+            <Label fx:id="city" alignment="CENTER" layoutX="244.0" layoutY="14.0" prefHeight="58.0" prefWidth="533.0" text="CITY NAME" textFill="#78ffc4">
                <font>
                   <Font name="System Bold" size="40.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="129.0" prefHeight="40.0" prefWidth="183.0" text="CURRENT WEATHER" textAlignment="CENTER" textFill="#ff6767">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="67.0" layoutY="129.0" prefHeight="40.0" prefWidth="183.0" text="Day 1" textAlignment="CENTER" textFill="#ff6767">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="96.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="High:" textFill="#ff6767">
+            <Label layoutX="106.0" layoutY="235.0" prefHeight="31.0" prefWidth="104.0" text="High:" textFill="#ff6767">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="171.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="Low:" textFill="#ff6767">
+            <Label layoutX="181.0" layoutY="235.0" prefHeight="31.0" prefWidth="104.0" text="Low:" textFill="#ff6767">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="errors" alignment="CENTER" layoutX="329.0" layoutY="72.0" prefHeight="40.0" prefWidth="383.0" text="Errors" textFill="WHITE">
+            <Label fx:id="errors" alignment="CENTER" layoutX="319.0" layoutY="72.0" prefHeight="40.0" prefWidth="383.0" text="Errors" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="currentTemp" alignment="CENTER" layoutX="98.0" layoutY="331.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="601.0" layoutY="129.0" prefHeight="40.0" prefWidth="183.0" text="Day 4" textAlignment="CENTER" textFill="#ff6767">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="590.0" layoutY="129.0" prefHeight="40.0" prefWidth="183.0" text="Day 4" textAlignment="CENTER" textFill="#ff6767">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="429.0" layoutY="129.0" prefHeight="40.0" prefWidth="183.0" text="Day 3" textAlignment="CENTER" textFill="#ff6767">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="419.0" layoutY="129.0" prefHeight="40.0" prefWidth="183.0" text="Day 3" textAlignment="CENTER" textFill="#ff6767">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="264.0" layoutY="129.0" prefHeight="40.0" prefWidth="183.0" text="Day 2" textAlignment="CENTER" textFill="#ff6767">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="253.0" layoutY="129.0" prefHeight="40.0" prefWidth="183.0" text="Day 2" textAlignment="CENTER" textFill="#ff6767">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="787.0" layoutY="129.0" prefHeight="40.0" prefWidth="183.0" text="Day 5" textAlignment="CENTER" textFill="#ff6767">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="776.0" layoutY="129.0" prefHeight="40.0" prefWidth="183.0" text="Day 5" textAlignment="CENTER" textFill="#ff6767">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <ImageView fx:id="img1" fitHeight="106.0" fitWidth="123.0" layoutX="85.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="img2" fitHeight="106.0" fitWidth="123.0" layoutX="294.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="img3" fitHeight="106.0" fitWidth="123.0" layoutX="459.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="img4" fitHeight="106.0" fitWidth="123.0" layoutX="631.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="img5" fitHeight="106.0" fitWidth="123.0" layoutX="824.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="high1" alignment="CENTER" layoutX="64.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+            <Label fx:id="high1" alignment="CENTER" layoutX="74.0" layoutY="266.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="low1" alignment="CENTER" layoutX="139.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+            <Label fx:id="low1" alignment="CENTER" layoutX="149.0" layoutY="266.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="282.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="High:" textFill="#ff6767">
+            <Label layoutX="292.0" layoutY="235.0" prefHeight="31.0" prefWidth="104.0" text="High:" textFill="#ff6767">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="357.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="Low:" textFill="#ff6767">
+            <Label layoutX="367.0" layoutY="235.0" prefHeight="31.0" prefWidth="104.0" text="Low:" textFill="#ff6767">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="high2" alignment="CENTER" layoutX="250.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+            <Label fx:id="high2" alignment="CENTER" layoutX="260.0" layoutY="266.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="low2" alignment="CENTER" layoutX="325.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+            <Label fx:id="low2" alignment="CENTER" layoutX="335.0" layoutY="266.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="447.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="High:" textFill="#ff6767">
+            <Label layoutX="457.0" layoutY="235.0" prefHeight="31.0" prefWidth="104.0" text="High:" textFill="#ff6767">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="522.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="Low:" textFill="#ff6767">
+            <Label layoutX="532.0" layoutY="235.0" prefHeight="31.0" prefWidth="104.0" text="Low:" textFill="#ff6767">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="high3" alignment="CENTER" layoutX="415.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+            <Label fx:id="high3" alignment="CENTER" layoutX="425.0" layoutY="266.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="low3" alignment="CENTER" layoutX="490.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+            <Label fx:id="low3" alignment="CENTER" layoutX="500.0" layoutY="266.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="619.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="High:" textFill="#ff6767">
+            <Label layoutX="629.0" layoutY="235.0" prefHeight="31.0" prefWidth="104.0" text="High:" textFill="#ff6767">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="694.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="Low:" textFill="#ff6767">
+            <Label layoutX="704.0" layoutY="235.0" prefHeight="31.0" prefWidth="104.0" text="Low:" textFill="#ff6767">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="high4" alignment="CENTER" layoutX="587.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+            <Label fx:id="high4" alignment="CENTER" layoutX="597.0" layoutY="266.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="low4" alignment="CENTER" layoutX="662.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+            <Label fx:id="low4" alignment="CENTER" layoutX="672.0" layoutY="266.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="805.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="High:" textFill="#ff6767">
+            <Label layoutX="815.0" layoutY="235.0" prefHeight="31.0" prefWidth="104.0" text="High:" textFill="#ff6767">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="880.0" layoutY="378.0" prefHeight="31.0" prefWidth="104.0" text="Low:" textFill="#ff6767">
+            <Label layoutX="890.0" layoutY="235.0" prefHeight="31.0" prefWidth="104.0" text="Low:" textFill="#ff6767">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="high5" alignment="CENTER" layoutX="773.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+            <Label fx:id="high5" alignment="CENTER" layoutX="783.0" layoutY="266.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="low5" alignment="CENTER" layoutX="848.0" layoutY="409.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+            <Label fx:id="low5" alignment="CENTER" layoutX="858.0" layoutY="266.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="humidity" layoutX="58.0" layoutY="318.0" prefHeight="31.0" prefWidth="104.0" text="Humidity:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="wind" layoutX="58.0" layoutY="370.0" prefHeight="31.0" prefWidth="104.0" text="Wind:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="humidity1" layoutX="257.0" layoutY="318.0" prefHeight="31.0" prefWidth="104.0" text="Humidity:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="wind1" layoutX="257.0" layoutY="370.0" prefHeight="31.0" prefWidth="104.0" text="Wind:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="humidity2" layoutX="436.0" layoutY="318.0" prefHeight="31.0" prefWidth="104.0" text="Humidity:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="wind2" layoutX="436.0" layoutY="370.0" prefHeight="31.0" prefWidth="104.0" text="Wind:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="humidity3" layoutX="602.0" layoutY="318.0" prefHeight="31.0" prefWidth="104.0" text="Humidity:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="wind3" layoutX="602.0" layoutY="370.0" prefHeight="31.0" prefWidth="104.0" text="Wind:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="humidity4" layoutX="770.0" layoutY="318.0" prefHeight="31.0" prefWidth="104.0" text="Humidity:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="wind4" layoutX="770.0" layoutY="370.0" prefHeight="31.0" prefWidth="104.0" text="Wind:" textFill="#ff6767">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="humidityHolder" alignment="CENTER" layoutX="113.0" layoutY="318.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="windHolder" alignment="CENTER" layoutX="100.0" layoutY="370.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="humidityHolder1" alignment="CENTER" layoutX="325.0" layoutY="318.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="windHolder1" alignment="CENTER" layoutX="312.0" layoutY="370.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="humidityHolder2" alignment="CENTER" layoutX="507.0" layoutY="318.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="windHolder2" alignment="CENTER" layoutX="494.0" layoutY="370.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="humidityHolder3" alignment="CENTER" layoutX="679.0" layoutY="318.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="windHolder3" alignment="CENTER" layoutX="666.0" layoutY="370.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="humidityHolder4" alignment="CENTER" layoutX="865.0" layoutY="318.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="windHolder4" alignment="CENTER" layoutX="852.0" layoutY="370.0" prefHeight="31.0" prefWidth="98.0" text="null" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>

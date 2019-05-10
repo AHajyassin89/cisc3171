@@ -1,6 +1,7 @@
 
 package com.anuragroy.Controllers;
 
+import com.anuragroy.Models.FiveDayForecast;
 import com.anuragroy.Models.ImageHandler;
 import com.anuragroy.Models.WeatherManager;
 import com.jfoenix.controls.JFXButton;
@@ -18,7 +19,10 @@ import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 import java.net.URL;
+import java.text.ParseException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -48,7 +52,7 @@ public class ForecastController implements Initializable{
     private Label currentTemp;
 
     @FXML
-    private ImageView img1;
+    private  ImageView img1;
 
     @FXML
     private ImageView img2;
@@ -91,19 +95,76 @@ public class ForecastController implements Initializable{
 
     @FXML
     private Label low5;
+    @FXML
+    private Label humidityHolder,humidityHolder1, humidityHolder2, humidityHolder3, humidityHolder4;
+    @FXML
+    private Label windHolder,windHolder1, windHolder2, windHolder3, windHolder4;
     
     @FXML
     private AnchorPane parent;
     
+    private String citySet;
+    
+    
+    public ForecastController() throws IOException, ParseException
+    {
+        
+    }
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+            String str = "" + Controller.fdf.getDailyHigh(1);
+            high1.setText(str);
+            str = "" + Controller.fdf.getDailyHigh(2);
+            high2.setText(str);
+            str = "" + Controller.fdf.getDailyHigh(3);
+            high3.setText(str);
+            str = "" + Controller.fdf.getDailyHigh(4);
+            high4.setText(str);
+            str = "" + Controller.fdf.getDailyHigh(5);
+            high5.setText(str);
+            
+            str = "" + Controller.fdf.getDailyLow(1);
+            low1.setText(str);
+            str = "" + Controller.fdf.getDailyLow(2);
+            low2.setText(str);
+            str = "" + Controller.fdf.getDailyLow(3);
+            low3.setText(str);
+            str = "" + Controller.fdf.getDailyLow(4);
+            low4.setText(str);
+            str = "" + Controller.fdf.getDailyLow(5);
+            low5.setText(str);
+            
+            str = String.format("%.2f", Controller.fdf.getDailyHumidity(1))+"%";
+            humidityHolder.setText(str);
+            str = String.format("%.2f", Controller.fdf.getDailyHumidity(2))+"%";
+            humidityHolder1.setText(str);
+            str = String.format("%.2f", Controller.fdf.getDailyHumidity(3))+"%";
+            humidityHolder2.setText(str);
+            str = String.format("%.2f", Controller.fdf.getDailyHumidity(4))+"%";
+            humidityHolder3.setText(str);
+            str = String.format("%.2f", Controller.fdf.getDailyHumidity(5)) +"%";
+            humidityHolder4.setText(str);
+            
+            str = String.format("%.2f", Controller.fdf.getDailyWind(1))+ "mph";
+            windHolder.setText(str);
+            str = String.format("%.2f", Controller.fdf.getDailyWind(2))+ "mph";
+            windHolder1.setText(str);
+            str = String.format("%.2f", Controller.fdf.getDailyWind(3))+ "mph";
+            windHolder2.setText(str);
+            str = String.format("%.2f", Controller.fdf.getDailyWind(4))+ "mph";
+            windHolder3.setText(str);
+            str = String.format("%.2f", Controller.fdf.getDailyWind(5)) + "mph";
+            windHolder4.setText(str);
+            
+            
         
     }
     @FXML
     private void back(ActionEvent event) throws IOException
     {
-        Parent blah = FXMLLoader.load(getClass().getResource("/fxml/weather.fxml"));
-        Scene scene = new Scene(blah);
+        Parent newParent = FXMLLoader.load(getClass().getResource("/fxml/weather.fxml"));
+        Scene scene = new Scene(newParent);
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         appStage.setScene(scene);
         appStage.show();

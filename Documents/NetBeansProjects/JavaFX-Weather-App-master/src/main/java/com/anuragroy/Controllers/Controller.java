@@ -1,10 +1,13 @@
 package com.anuragroy.Controllers;
 
+import com.anuragroy.Models.FiveDayForecast;
 import com.anuragroy.Models.ImageHandler;
 import com.anuragroy.Models.WeatherManager;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
@@ -17,7 +20,10 @@ import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 import java.net.URL;
+import java.text.ParseException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -28,7 +34,8 @@ import javafx.stage.Stage;
 
 public class Controller implements Initializable {
     WeatherManager weatherManager;
-    String citySet;
+    public static FiveDayForecast fdf;
+    public static String citySet;
 
     @FXML
     private ImageView img;
@@ -48,7 +55,43 @@ public class Controller implements Initializable {
     
     //Constructor to set the initial city to Pune
     public Controller() {
-        this.citySet = "New York".toUpperCase();
+         String publicIpAddress;
+         if (citySet == null)
+         {
+             
+         
+    try {
+        URL url_name = new URL("http://bot.whatismyipaddress.com");
+        BufferedReader readip = new BufferedReader(new InputStreamReader(url_name.openStream()));
+        //return address
+        publicIpAddress = readip.readLine().trim();
+        }
+    catch(Exception e)
+        {
+        publicIpAddress = "error";
+         }
+
+        //get city from ipaddress
+
+     //String citySet="";
+        try {
+            URL url_name2 = new URL("https://ipapi.co/"+publicIpAddress+"/city");  //if you want to return zipcode replace city with "postal"
+            BufferedReader readcity = new BufferedReader(new InputStreamReader(url_name2.openStream()));
+            URL url_name3 = new URL("https://ipapi.co/"+publicIpAddress+"/region");  //if you want to return zipcode replace city with "postal"
+            BufferedReader readcity2 = new BufferedReader(new InputStreamReader(url_name3.openStream()));
+            //return address
+            citySet = readcity.readLine().trim() + ", " + readcity2.readLine().trim();
+        }
+        catch(Exception e)
+        {
+            citySet = "error";
+        }
+         }
+         
+    }
+    
+    public Controller(String citySet) {
+        Controller.citySet = citySet;
     }
 
     //Event Handler for each button
@@ -91,9 +134,10 @@ public class Controller implements Initializable {
         }else {
             try {
                 errors.setText("");
-                this.citySet = cityName.getText().trim();
+                Controller.citySet = cityName.getText().trim();
                 cityName.setText((cityName.getText().trim()).toUpperCase());
                 weatherManager = new WeatherManager(citySet);
+                fdf = new FiveDayForecast(citySet);
                 showWeather();
                 //bottomSet(false);
                 invis.requestFocus();
@@ -160,22 +204,16 @@ public class Controller implements Initializable {
     @FXML
     private void loadFiveDay(ActionEvent event) throws IOException
     {
-        Parent blah = FXMLLoader.load(getClass().getResource("/fxml/5DayForecast.fxml"));
-        Scene scene = new Scene(blah);
+        
+        
+        Parent parent = FXMLLoader.load(getClass().getResource("/fxml/5DayForecast.fxml"));
+        Scene scene = new Scene(parent);
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         appStage.setScene(scene);
         appStage.show();
+        
     }
-    /*
-    @FXML
-    private AnchorPane rootPane;
-    @FXML
-    private void loadFiveDay(ActionEvent event) throws IOException
-    {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/fxml/5DayForecast.fxml"));
-        rootPane.getChildren().setAll(pane);
-    }
-    */
+
     
     
     @Override
@@ -187,6 +225,13 @@ public class Controller implements Initializable {
         fiveDayForecast.setVisible(true);
         errors.setText("");
         weatherManager = new WeatherManager(citySet);
+        try {
+            fdf = new FiveDayForecast(citySet);
+        } catch (IOException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParseException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
         invis.requestFocus();
 
         //try catch block to see if there is internet and disabling ecery field
@@ -208,6 +253,8 @@ public class Controller implements Initializable {
             }
         });
     }
+    
+
     
 
 

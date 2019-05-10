@@ -18,8 +18,8 @@ private double[] wind;
 
     }
 
-    public FiveDayForecast(String url) throws IOException, ParseException {
-        JSONObject forecastWeather = JSON.readJsonFromUrl(url);
+    public FiveDayForecast(String city) throws IOException, ParseException {
+        JSONObject forecastWeather = JSON.readJsonFromUrl("http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=2f872b5246cef2d7a2bfcf6e10a62160&lang=eng&units=imperial");
         JSONArray weathers = forecastWeather.getJSONArray("list");
 
         this.forecastList = new Weather[weathers.length()];
@@ -36,7 +36,7 @@ private double[] wind;
             this.forecastList[i].setMaxTemp(list.getJSONObject("main").getDouble("temp_max"));
             this.forecastList[i].setMinTemp(list.getJSONObject("main").getDouble("temp_min"));
             this.forecastList[i].setWind(list.getJSONObject("wind").getDouble("speed"));
-            this.forecastList[i].setIcon(cloudInfo.get("icon").toString());
+            this.forecastList[i].setIcon(cloudInfo.getString("icon"));
             
 
         }
@@ -45,7 +45,7 @@ private double[] wind;
         humidity = new double[5];
         wind = new double [5];
         double windAvg = 0, humidityAvg=0;
-     
+        
             for (int i=0, j=1;i<(forecastList.length-1);i++)
             {
                 if (j<6)
@@ -68,7 +68,10 @@ private double[] wind;
                    humidityAvg += forecastList[i].getHumidity();
                     windAvg += forecastList[i].getWind();
                     i++;
+                    
+
                 }
+                
                 humidity[j-1] = humidityAvg/i;
                 humidityAvg = 0;
                 wind[j-1] = windAvg/i;
@@ -110,6 +113,7 @@ private double[] wind;
         }
         return wind[day-1];
     }
+
     
 
 
