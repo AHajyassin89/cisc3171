@@ -98,7 +98,7 @@ public class ForecastController implements Initializable{
     @FXML
     private Label humidityHolder,humidityHolder1, humidityHolder2, humidityHolder3, humidityHolder4;
     @FXML
-    private Label windHolder,windHolder1, windHolder2, windHolder3, windHolder4;
+    private Label windHolder,windHolder1, windHolder2, windHolder3, windHolder4, cloudDesc, cloudDesc1, cloudDesc2, cloudDesc3, cloudDesc4;
     
     @FXML
     private AnchorPane parent;
@@ -157,7 +157,13 @@ public class ForecastController implements Initializable{
             str = String.format("%.2f", Controller.fdf.getDailyWind(5)) + "mph";
             windHolder4.setText(str);
             
-            
+            cloudDesc.setText(Controller.fdf.getDailyCloudDescription(1));
+            cloudDesc1.setText(Controller.fdf.getDailyCloudDescription(2));
+            cloudDesc2.setText(Controller.fdf.getDailyCloudDescription(3));
+            cloudDesc3.setText(Controller.fdf.getDailyCloudDescription(4));
+            cloudDesc4.setText(Controller.fdf.getDailyCloudDescription(5));
+            city.setText(Controller.citySet);
+            errors.setText("");
         
     }
     @FXML

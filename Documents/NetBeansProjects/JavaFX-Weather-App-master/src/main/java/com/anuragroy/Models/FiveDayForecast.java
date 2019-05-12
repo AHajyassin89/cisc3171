@@ -12,6 +12,7 @@ private double[] highs;
 private double[] lows;
 private double[] humidity;
 private double[] wind;
+private String[] cloudDescription;
 //array to store weather objects
 
     public FiveDayForecast() {
@@ -41,9 +42,10 @@ private double[] wind;
 
         }
         highs = new double[5];
-        lows = new double [5];
+        lows = new double[5];
         humidity = new double[5];
-        wind = new double [5];
+        wind = new double[5];
+        cloudDescription = new String[5];
         double windAvg = 0, humidityAvg=0;
         
             for (int i=0, j=1;i<(forecastList.length-1);i++)
@@ -71,7 +73,7 @@ private double[] wind;
                     
 
                 }
-                
+                cloudDescription[j-1]= forecastList[i].getCloudDescription();
                 humidity[j-1] = humidityAvg/i;
                 humidityAvg = 0;
                 wind[j-1] = windAvg/i;
@@ -112,6 +114,14 @@ private double[] wind;
             throw new ArrayIndexOutOfBoundsException("5 days only: range 1-5");
         }
         return wind[day-1];
+    }
+    public String getDailyCloudDescription(int day)
+    {
+        if (day>5 || day <1)
+        {
+            throw new ArrayIndexOutOfBoundsException("5 days only: range 1-5");
+        }
+        return cloudDescription[day-1];
     }
 
     
