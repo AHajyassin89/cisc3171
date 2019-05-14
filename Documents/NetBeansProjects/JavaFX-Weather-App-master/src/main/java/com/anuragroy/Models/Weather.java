@@ -1,4 +1,4 @@
-
+// weather object class with related variables and associated setters and getters
 package com.anuragroy.Models;
 
 import java.text.ParseException;
@@ -19,34 +19,58 @@ public class Weather {
     private final SimpleDateFormat sdf;
     
     
-
+    //constructor sets the format for the date variable
     public Weather(){
         sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
         
     }
-//weather object class to hold the information from json
 
-    
-    
-    public void setCloudDescription(String cloudDescription){this.cloudDescription = cloudDescription;}
-    public String getCloudDescription() { return this.cloudDescription; }
+   
+    public void setCloudDescription(String cloudDescription){
+        this.cloudDescription = cloudDescription;
+    }
+    public String getCloudDescription() { 
+        return this.cloudDescription; 
+    }
 
-    public void setTemp(double temp){this.temp= temp;}
-    public double getTemp() { return this.temp; }
+    public void setTemp(double temp){
+        this.temp= temp;
+    }
+    public double getTemp() {
+        return this.temp; 
+    }
 
-    public void setMaxTemp(double maxTemp){this.maxTemp=maxTemp;}
-    public double getMaxTemp() { return this.maxTemp;  }
+    public void setMaxTemp(double maxTemp){
+        this.maxTemp=maxTemp;
+    }
+    public double getMaxTemp() {
+        return this.maxTemp;  
+    }
 
-    public void setMinTemp(double minTemp){this.minTemp = minTemp;}
-    public double getMinTemp() { return this.minTemp; }
+    public void setMinTemp(double minTemp){
+        this.minTemp = minTemp;
+    }
+    public double getMinTemp() {
+        return this.minTemp; 
+    }
 
-    public void setHumidity(double humidity){this.humidity= humidity;}
-    public double getHumidity() {  return this.humidity; }
+    public void setHumidity(double humidity){
+        this.humidity= humidity;
+    }
+    public double getHumidity() {
+        return this.humidity; 
+    }
 
-    public void setDate(String date) throws ParseException{this.date = sdf.parse(date);}
-    public String getDate() {  return this.date.toString(); }
-    public Date getDateAsDate() {  return this.date; }
+    public void setDate(String date) throws ParseException{
+        this.date = sdf.parse(date);
+    }
+    public String getDate() {
+        return this.date.toString(); 
+    }
+    public Date getDateAsDate() { 
+        return this.date; 
+    }
     
     public Date getDateWithoutTime() throws ParseException 
         { 
@@ -54,11 +78,19 @@ public class Weather {
             return formatter.parse(formatter.format(this.date)); 
         }
     
-    public void setWind(double wind){this.wind=wind;}
-    public double getWind() { return this.wind;  }
+    public void setWind(double wind){
+        this.wind=wind;
+    }
+    public double getWind() {
+        return this.wind;  
+    }
 
-    public void setIcon(String icon){this.icon=icon;}
-    public String getIcon() { return this.icon;  }
+    public void setIcon(String icon){
+        this.icon=icon;
+    }
+    public String getIcon() {
+        return this.icon;  
+    }
     
     
     @Override

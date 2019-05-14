@@ -1,11 +1,8 @@
 package com.anuragroy.Models;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.*;
-import java.net.URL;
-import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -36,18 +33,6 @@ public class WeatherManager {
         return sb.toString();
     }
 
-    //Reads and returns the JsonObject
-    public JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
-        InputStream is = new URL(url).openStream();
-        try {
-            BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
-            String jsonText = readAll(rd);
-            JSONObject json = new JSONObject(jsonText);
-            return json;
-        } finally {
-            is.close();
-        }
-    }
 
     //method to get the weather of the selected city
     public void getWeather(){
@@ -61,7 +46,7 @@ public class WeatherManager {
 
         //connects and asks the api to sen the json file
         try {
-            json = readJsonFromUrl("http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=2f872b5246cef2d7a2bfcf6e10a62160&lang=eng&units=imperial");
+            json = JSON.readJsonFromUrl("http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=2f872b5246cef2d7a2bfcf6e10a62160&lang=eng&units=imperial");
         } catch (IOException e) {
             return;
         }

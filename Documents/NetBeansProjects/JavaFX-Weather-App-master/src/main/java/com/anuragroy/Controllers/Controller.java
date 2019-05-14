@@ -137,7 +137,7 @@ public class Controller implements Initializable {
                 Controller.citySet = cityName.getText().trim();
                 cityName.setText((cityName.getText().trim()).toUpperCase());
                 weatherManager = new WeatherManager(citySet);
-                fdf = new FiveDayForecast(citySet);
+                fdf = new FiveDayForecast(citySet,true);
                 showWeather();
                 //bottomSet(false);
                 invis.requestFocus();
@@ -226,7 +226,7 @@ public class Controller implements Initializable {
         errors.setText("");
         weatherManager = new WeatherManager(citySet);
         try {
-            fdf = new FiveDayForecast(citySet);
+            fdf = new FiveDayForecast(citySet,true);
         } catch (IOException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParseException ex) {
